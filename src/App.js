@@ -15,10 +15,26 @@ const Title = styled.div`
   justify-content: center;
   align-items: center;
   font-weight: bold;
+  grid-column: 1/2;
 `;
 
 const Nav = styled.nav`
   color: white;
+  grid-column: 3/4;
+`;
+
+const Menu = styled.ul`
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const MenuItem = styled.li`
+  margin-left: 2em;
+  :hover {
+    color: black;
+  }
 `;
 
 const Background = styled.div`
@@ -32,10 +48,11 @@ const Header = styled.div`
   display: grid;
   justify-content: center;
   align-items: center;
-  grid-template-columns: 1fr auto minmax(600, 1fr) 1fr;
+  grid-template-columns: 1fr auto minmax(600px, 1fr) 1fr;
   position: fixed;
   top: 0;
-  height: ${props => (props.isTop ? 100 : 50)}px;
+  font-size: 1.5em;
+  height: ${props => (props.isTop ? 80 : 50)}px;
   width: 100%;
   background-color: rgb(33, 33, 33, ${props => (props.isTop ? 0.5 : 1)});
   transition: all 500ms ease-in-out;
@@ -71,13 +88,13 @@ class App extends Component {
         <Header isTop={this.state.isTop}>
           <Title>cajun shack nola</Title>
           <Nav>
-            <ul>
-              <li>item 1</li>
-              <li>item 2</li>
-              <li>item 2</li>
-              <li>item 2</li>
-              <li>item 2</li>
-            </ul>
+            <Menu>
+              <MenuItem>item 1</MenuItem>
+              <MenuItem>item 2</MenuItem>
+              <MenuItem>item 2</MenuItem>
+              <MenuItem>item 2</MenuItem>
+              <MenuItem>item 2</MenuItem>
+            </Menu>
           </Nav>
         </Header>
       </Container>
