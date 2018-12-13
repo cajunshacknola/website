@@ -23,14 +23,16 @@ const Nav = styled.nav`
 
 const Background = styled.div`
   background-image: url(${props => props.img});
-  height: 120vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50vh;
 `;
 
 const Header = styled.div`
   display: grid;
   justify-content: center;
   align-items: center;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr auto minmax(600, 1fr) 1fr;
   position: fixed;
   top: 0;
   height: ${props => (props.isTop ? 100 : 50)}px;
@@ -64,19 +66,21 @@ class App extends Component {
 
   render() {
     return (
-      <Header>
+      <Container>
         <Background img={background} />
         <Header isTop={this.state.isTop}>
           <Title>cajun shack nola</Title>
-          <ul>
-            <li>item 1</li>
-            <li>item 2</li>
-            <li>item 2</li>
-            <li>item 2</li>
-            <li>item 2</li>
-          </ul>
+          <Nav>
+            <ul>
+              <li>item 1</li>
+              <li>item 2</li>
+              <li>item 2</li>
+              <li>item 2</li>
+              <li>item 2</li>
+            </ul>
+          </Nav>
         </Header>
-      </Header>
+      </Container>
     );
   }
 }
