@@ -1,0 +1,27 @@
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.headerTop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  height: 30px;
+  width: 100%;
+  background-color: rgb(33, 33, 33);
+}
+
+.iconTop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  background-color: white;
+}
