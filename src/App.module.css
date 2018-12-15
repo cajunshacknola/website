@@ -6,16 +6,6 @@
   padding: 0;
 }
 
-.headerTop {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: black;
-  height: 30px;
-  width: 100%;
-  background-color: rgb(33, 33, 33);
-}
-
 .iconTop {
   display: flex;
   justify-content: center;
@@ -26,46 +16,103 @@
   background-color: white;
 }
 
-@media (max-width: 576px) {
+.header {
+  background-color: gold;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: 800;
 }
 
-@media (max-width: 768px) {
-  .headerTop {
-    display: none;
-  }
-
-  .headerMobile {
-    background-color: gold;
-    height: 100px;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    font-weight: 800;
-  }
-
-  .titleOne {
-    margin-left: 5px;
-    padding-right: 10px;
-    text-transform: uppercase;
-    color: black;
-    font-size: 2em;
-  }
-
-  .titleIcon {
-    color: darkred;
-  }
-
-  .titleTwo {
-    padding-left: 15px;
-    text-transform: uppercase;
-    color: white;
-    font-size: 2em;
-  }
+.titleOne {
+  margin-left: 20px;
+  padding-right: 10px;
+  text-transform: uppercase;
+  color: black;
+  font-size: 2em;
 }
 
-@media (max-width: 992px) {
+.titleIcon {
+  color: darkred;
 }
 
-@media (max-width: 1200px) {
+.titleTwo {
+  padding-left: 15px;
+  text-transform: uppercase;
+  color: white;
+  font-size: 2em;
+  font-style: italic;
+}
+
+.navToggle,
+.navToggleOpen {
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  width: 35px;
+  height: 5px;
+  display: inline-block;
+  background-color: black;
+  position: relative;
+  margin-right: 10px;
+  transition: all 250ms ease-in-out;
+  outline: none;
+}
+
+.navToggle::before,
+.navToggleOpen::before,
+.navToggle::after,
+.navToggleOpen::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  width: 35px;
+  height: 5px;
+  left: 0;
+  transition: all 250ms ease-in-out;
+}
+
+.navToggle::after,
+.navToggleOpen::after {
+  top: -10px;
+}
+
+.navToggle::before,
+.navToggleOpen::before {
+  top: 10px;
+}
+
+.navContainer {
+  margin-left: auto;
+}
+
+.menu {
+  height: 100px;
+  width: 100%;
+  background-color: gold;
+}
+
+.menuOpen {
+  display: block;
+}
+
+.menuClose {
+  display: none;
+}
+
+.navToggleOpen {
+  background-color: transparent;
+  transition: background-color 50ms ease-in-out;
+}
+
+.navToggleOpen::before {
+  top: 0;
+  transform: rotate(-40deg);
+}
+
+.navToggleOpen::after {
+  top: 0;
+  transform: rotate(40deg);
 }
