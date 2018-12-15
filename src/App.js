@@ -2,21 +2,33 @@ import React, { Component } from "react";
 import styles from "./App.module.css";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false
+    };
+  }
+
+  menuClicked() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
+
   render() {
     return (
       <div className={styles.container}>
-        <div className={styles.headerMobile}>
+        <div className={styles.header}>
           <div className={styles.titleOne}>cajun</div>
           <div className={styles.titleIcon}>
-            <i class="fas fa-warehouse fa-2x" />
+            <i className="fas fa-warehouse fa-2x" />
           </div>
           <div className={styles.titleTwo}>shack</div>
-        </div>
-        <div className={styles.headerTop}>
-          <div className={styles.iconTop}>
-            <i class="fab fa-twitter" />
+          <div onClick={this.menuClicked.bind(this)} className={styles.navContainer}>
+            <button className={this.state.isOpen ? styles.navToggleOpen : styles.navToggle} />
           </div>
         </div>
+        <div className={`${styles.menu} ${this.state.isOpen ? styles.menuOpen : styles.menuClose}`} />
       </div>
     );
   }
