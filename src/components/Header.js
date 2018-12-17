@@ -3,9 +3,8 @@ import styled from "styled-components";
 
 const Container = styled.div`
   width: 100%;
-  height: 20%;
   margin: 0;
-  padding: 0;
+  padding: 20px 0;
   display: grid;
   grid-template-columns: 4fr 1fr;
   background-color: gold;
@@ -16,7 +15,7 @@ const Title = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-weight: 800;
   ::before {
     content: "cajun";
