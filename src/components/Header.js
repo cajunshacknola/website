@@ -35,11 +35,16 @@ const Title = styled.div`
   }
 `;
 
-const NavToggle = styled.div`
-  position: relative;
+const ToggleContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  width: 50px;
+`;
+
+const NavToggle = styled.div`
+  position: relative;
   width: 40px;
   height: 5px;
   background-color: black;
@@ -72,7 +77,9 @@ export default class Header extends Component {
         <Title>
           <i className="fas fa-warehouse fa-2x" />
         </Title>
-        <NavToggle />
+        <ToggleContainer>
+          <NavToggle />
+        </ToggleContainer>
       </Container>
     );
   }
