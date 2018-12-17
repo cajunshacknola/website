@@ -14,7 +14,22 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: false
+      isTop: true
+    };
+  }
+
+  componentDidMount() {
+    var that = this;
+    window.onscroll = function() {
+      if (window.pageYOffset === 0) {
+        that.setState({
+          isTop: true
+        });
+      } else {
+        that.setState({
+          isTop: false
+        });
+      }
     };
   }
 
@@ -27,7 +42,7 @@ class App extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header isTop={this.state.isTop} />
         <Main />
       </Container>
     );

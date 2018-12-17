@@ -30,6 +30,7 @@ const Holder = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
+  flex-direction: column;
 `;
 
 const ImageContainer = styled.img`
@@ -39,21 +40,14 @@ const ImageContainer = styled.img`
   animation: 2s ${fadeIn} ease-in-out;
 `;
 
-const BGText = styled.div`
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* white w/opacity/see-through */
-  color: white;
-  font-weight: bold;
-  border: 1px solid #f1f1f1;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  height: 80%;
-  width: 70%;
-  overflow: hidden;
-  text-align: center;
+const Heading = styled.div`
+  font-size: 1.5em;
+`;
+
+const Description = styled.div`
+  font-size: 0.8em;
+  font-style: italic;
+  padding: 10px;
 `;
 
 export default class Main extends Component {
@@ -63,27 +57,20 @@ export default class Main extends Component {
         <CanvasMain>
           <Holder>
             <ImageContainer src="/images/image1.jpg" />
-            <BGText>
-              <h2>Poboys</h2>
-              <p>
-                <h6>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit repudiandae corrupti accusamus
-                  provident ab quos totam. Nostrum adipisci illo nam.
-                </h6>
-              </p>
-            </BGText>
+            <Heading>Po-boys</Heading>
+            <Description>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam totam in soluta, accusantium vel placeat at
+              alias eos rerum nam.
+            </Description>
           </Holder>
           <Holder>
             <ImageContainer src="/images/image2.jpg" />
-            <BGText>
-              <h2>Amazing Seafood</h2>
-              <p>
-                <h6>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id nisi nostrum ab laboriosam vitae saepe
-                  eos debitis aperiam aspernatur nemo!
-                </h6>
-              </p>
-            </BGText>
+            <Heading>Seafood</Heading>
+            <Description>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, quae iure aspernatur magni soluta possimus
+              odio facilis velit suscipit sapiente maiores error. Culpa assumenda sapiente dolore, cum iure nulla
+              debitis.
+            </Description>
           </Holder>
         </CanvasMain>
       </Container>
