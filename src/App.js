@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import styles from "./App.module.css";
+import "./App.css";
+import Header from "./components/Header";
+import styled from "styled-components";
+
+const Container = styled.div`
+  width: 100%;
+  height: 100%;
+`;
 
 class App extends Component {
   constructor(props) {
@@ -17,19 +24,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <div className={styles.titleOne}>cajun</div>
-          <div className={styles.titleIcon}>
-            <i className="fas fa-warehouse fa-2x" />
-          </div>
-          <div className={styles.titleTwo}>shack</div>
-          <div onClick={this.menuClicked.bind(this)} className={styles.navContainer}>
-            <button className={this.state.isOpen ? styles.navToggleOpen : styles.navToggle} />
-          </div>
-        </div>
-        <div className={`${styles.menu} ${this.state.isOpen ? styles.menuOpen : styles.menuClose}`} />
-      </div>
+      <Container>
+        <Header />
+      </Container>
     );
   }
 }
