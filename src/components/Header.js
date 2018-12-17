@@ -18,8 +18,10 @@ const Title = styled.div`
   letter-spacing: 0.1em;
   justify-content: flex-start;
   align-items: center;
-  font-size: ${props => (props.isTop ? 1.2 : 1)}em;
-  transition: all 300ms ease-in-out;
+  font-size: 1.2em;
+  transform: scale(${props => (props.isTop ? 1 : 0.8)});
+  transform-origin: left;
+  transition: transform 300ms ease-in-out;
   font-weight: 800;
   ::before {
     content: "cajun";
