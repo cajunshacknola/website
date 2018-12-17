@@ -6,7 +6,7 @@ const Container = styled.div`
   position: fixed;
   width: 100%;
   margin: 0;
-  padding: 20px 0;
+  padding: ${props => (props.isTop ? 20 : 5)}px 0;
   display: grid;
   grid-template-columns: 1fr 15%;
   grid-row-gap: 10px;
@@ -18,7 +18,8 @@ const Title = styled.div`
   letter-spacing: 0.1em;
   justify-content: flex-start;
   align-items: center;
-  font-size: 1.2em;
+  font-size: ${props => (props.isTop ? 1.2 : 1)}em;
+  transition: all 300ms ease-in-out;
   font-weight: 800;
   ::before {
     content: "cajun";
@@ -94,8 +95,8 @@ const Address = styled.div`
 export default class Header extends Component {
   render() {
     return (
-      <Container>
-        <Title>
+      <Container istop={this.props.istop}>
+        <Title isTop={this.props.isTop}>
           <i className="fas fa-warehouse" />
         </Title>
         <ToggleContainer>
