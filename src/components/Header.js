@@ -76,9 +76,10 @@ const NavToggle = styled.div`
 `;
 
 const Address = styled.div`
+  position: relative;
   background-color: black;
   color: white;
-  height: 30px;
+  height: ${props => (props.isTop ? 30 : 3)}px;
   grid-column: 1 / 3;
   display: flex;
   justify-content: center;
@@ -86,6 +87,8 @@ const Address = styled.div`
   font-style: italic;
   font-family: "Roboto";
   font-size: 0.7em;
+  /* transform: scale(${props => (props.isTop ? 1 : 0)}); */
+  transition: all 300ms ease-in-out;
 `;
 
 export default class Header extends Component {
@@ -98,7 +101,7 @@ export default class Header extends Component {
         <ToggleContainer>
           <NavToggle />
         </ToggleContainer>
-        <Address>9036 Lake Forest New Orleans, LA 70127</Address>
+        <Address isTop={this.props.isTop}>{this.props.isTop ? "9036 Lake Forest New Orleans, LA 70127" : ""}</Address>
       </Container>
     );
   }
