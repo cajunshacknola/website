@@ -66,8 +66,12 @@ export default class Main extends Component {
           settings: {
             slidesToShow: 3,
             slidesToScroll: 3,
+            dots: false,
+            fade: true,
+            autoplay: true,
+            arrows: false,
             infinite: true,
-            dots: false
+            speed: 2000
           }
         },
         {
@@ -75,14 +79,26 @@ export default class Main extends Component {
           settings: {
             slidesToShow: 2,
             slidesToScroll: 2,
-            initialSlide: 2
+            initialSlide: 2,
+            dots: false,
+            fade: true,
+            autoplay: true,
+            arrows: false,
+            infinite: true,
+            speed: 2000
           }
         },
         {
           breakpoint: 480,
           settings: {
             slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            dots: false,
+            fade: true,
+            autoplay: true,
+            arrows: false,
+            infinite: true,
+            speed: 2000
           }
         }
       ]
