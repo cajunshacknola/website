@@ -1,63 +1,49 @@
 import React, { Component } from "react";
-import { Navbar, Nav, NavItem } from "react-bootstrap";
 import styled from "styled-components";
 
-const Title = styled.a`
-  font-size: 1.5em;
-  color: red !important;
-  padding: 1em;
+const Container = styled.div`
+  width: 100%;
+  height: 80px;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  background-color: gold;
+  grid-row-gap: 10px;
 `;
 
-const SubTitle = styled.span`
-  color: gray !important;
-  font-style: italic;
+const Title = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.3em;
+  font-weight: 800;
+  ::before {
+    content: "cajun";
+    text-transform: uppercase;
+    padding: 0 10px;
+  }
+
+  ::after {
+    content: "shack";
+    text-transform: uppercase;
+    padding: 0 10px;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
 `;
 
-const StyledMenu = styled.div`
-  color: black !important;
-  font-size: 1.2em;
-  font-family: "Tahoma";
-  font-weight: bold;
-  padding: 0.25em;
-`;
-
-const StyledNavbar = styled(Navbar)`
-  background-color: white;
-  border: none;
-`;
+const NavToggle = styled.div``;
 
 export default class Header extends Component {
   render() {
     return (
-      <StyledNavbar>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <Title href="https://www.google.com">
-              cajun store<SubTitle> nola</SubTitle>
-            </Title>
-          </Navbar.Brand>
-          <Navbar.Toggle />
-        </Navbar.Header>
-        <Navbar.Collapse>
-          <Nav pullRight>
-            <NavItem>
-              <StyledMenu>Menu</StyledMenu>
-            </NavItem>
-            <NavItem>
-              <StyledMenu>Story</StyledMenu>
-            </NavItem>
-            <NavItem>
-              <StyledMenu>Rewards</StyledMenu>
-            </NavItem>
-            <NavItem>
-              <StyledMenu>Catering</StyledMenu>
-            </NavItem>
-            <NavItem>
-              <StyledMenu>Contact us</StyledMenu>
-            </NavItem>
-          </Nav>
-        </Navbar.Collapse>
-      </StyledNavbar>
+      <Container>
+        <Title>
+          <i className="fas fa-warehouse" />
+        </Title>
+        <NavToggle />
+      </Container>
     );
   }
 }
