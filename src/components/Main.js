@@ -56,7 +56,7 @@ export default class Main extends Component {
       autoplay: true,
       arrows: false,
       infinite: true,
-      speed: 2000,
+      speed: 3000,
       slidesToShow: 4,
       slidesToScroll: 4,
       initialSlide: 0,
@@ -71,7 +71,7 @@ export default class Main extends Component {
             autoplay: true,
             arrows: false,
             infinite: true,
-            speed: 2000
+            speed: 3000
           }
         },
         {
@@ -98,7 +98,7 @@ export default class Main extends Component {
             autoplay: true,
             arrows: false,
             infinite: true,
-            speed: 2000
+            speed: 3000
           }
         }
       ]
