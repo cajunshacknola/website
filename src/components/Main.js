@@ -27,14 +27,9 @@ const Holder = styled.div`
   height: 80vh;
 `;
 
-const ImageContainer = styled.div`
-  width: 100%;
+const ImageContainer = styled.img`
   height: 100%;
-  background-image: url(${props => props.url});
-  filter: blur(80x);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  filter: blur1(px);
 `;
 
 const BGText = styled.div`
@@ -97,18 +92,13 @@ export default class Main extends Component {
         <CanvasMain>
           <Slider {...settings}>
             <Holder>
-              <ImageContainer url="/images/image1.jpg">
-                <BGText>best poboys</BGText>
-              </ImageContainer>
+              <ImageContainer src="/images/image1.jpg" />
+              <BGText>best poboys</BGText>
             </Holder>
             <Holder>
-              <ImageContainer url="/images/image2.jpg">
-                <BGText>amazing seafoods</BGText>
-              </ImageContainer>
+              <ImageContainer src="/images/image2.jpg" />
+              <BGText>amazing seafoods</BGText>
             </Holder>
-            <div>
-              <h3>2</h3>
-            </div>
           </Slider>
         </CanvasMain>
         <Canvas>item2</Canvas>
