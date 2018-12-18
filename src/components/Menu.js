@@ -1,5 +1,13 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const FadeIn = keyframes`
+0% {
+  opacity: 0;
+}
+100% {
+  opacity: 1
+}`;
 
 const Container = styled.div`
   display: flex;
@@ -23,6 +31,7 @@ const Wrapper = styled.div`
   margin-top: 100px;
   width: 100%;
   height: 100%;
+  animation: 2s ${FadeIn} ease-in-out;
 `;
 
 const Heading = styled.div`
