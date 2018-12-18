@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import ScrollLock from "react-scrolllock";
 
 const Container = styled.div`
   background-color: white;
@@ -145,6 +146,7 @@ export default class Header extends Component {
   render() {
     return (
       <Container istop={this.props.istop}>
+        <ScrollLock />
         <Title isTop={this.props.isTop}>
           <i className="fas fa-warehouse" />
         </Title>
