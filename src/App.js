@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Header from "./components/Header";
 import styled from "styled-components";
 import Main from "./components/Main";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Menu from "./components/Menu";
 
 const Container = styled.div`
   width: 100%;
@@ -41,10 +43,13 @@ class App extends Component {
 
   render() {
     return (
-      <Container>
-        <Header isTop={this.state.isTop} />
-        <Main />
-      </Container>
+      <Router>
+        <Container>
+          <Header isTop={this.state.isTop} />
+          <Route path="/" exact component={Main} />
+          <Route path="/menu" component={Menu} />
+        </Container>
+      </Router>
     );
   }
 }

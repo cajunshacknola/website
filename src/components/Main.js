@@ -40,14 +40,10 @@ const ImageContainer = styled.img`
   animation: 2s ${fadeIn} ease-in-out;
 `;
 
-const Heading = styled.div`
-  font-size: 1.5em;
-`;
-
 const Description = styled.div`
   font-size: 0.8em;
   font-style: italic;
-  padding: 10px;
+  padding: 30px;
 `;
 
 export default class Main extends Component {
@@ -57,19 +53,21 @@ export default class Main extends Component {
         <CanvasMain>
           <Holder>
             <ImageContainer src="/images/image1.jpg" />
-            <Heading>Po-boys</Heading>
             <Description>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam totam in soluta, accusantium vel placeat at
-              alias eos rerum nam.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Non ea omnis dolorum magnam nostrum nihil iste,
+              et repellendus molestias qui eum. Maxime, provident officia voluptates repellendus perspiciatis, quisquam
+              deleniti repellat cum voluptate eveniet velit modi consequuntur nam laudantium minima distinctio. Unde
+              quaerat dicta dolor recusandae quibusdam eligendi, ipsam iure exercitationem!
             </Description>
           </Holder>
           <Holder>
             <ImageContainer src="/images/image2.jpg" />
-            <Heading>Seafood</Heading>
             <Description>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, quae iure aspernatur magni soluta possimus
-              odio facilis velit suscipit sapiente maiores error. Culpa assumenda sapiente dolore, cum iure nulla
-              debitis.
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam itaque libero corporis, aliquid
+              explicabo distinctio consectetur tempora architecto, corrupti beatae delectus ad nisi quod! Vero, quos?
+              Veniam provident nulla dignissimos minima consequatur fuga. Doloribus dolore quidem est ea vero animi
+              laborum, distinctio possimus iste ratione nostrum minus error cumque tenetur repellat? Dolore ea ratione
+              tenetur totam cum odio temporibus itaque.
             </Description>
           </Holder>
         </CanvasMain>

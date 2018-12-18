@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import ScrollLock from "react-scrolllock";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   background-color: white;
@@ -127,6 +128,12 @@ const MenuItem = styled.li`
   border-bottom: 3px solid black;
 `;
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  background-color: white;
+  color: black;
+`;
+
 export default class Header extends Component {
   constructor(props) {
     super(props);
@@ -135,6 +142,13 @@ export default class Header extends Component {
     };
 
     this.toggle = this.toggle.bind(this);
+    this.navigate = this.navigate.bind(this);
+  }
+
+  navigate() {
+    this.setState({
+      isOpen: false
+    });
   }
 
   toggle() {
@@ -152,8 +166,16 @@ export default class Header extends Component {
         </Title>
         <MenuContainer isOpen={this.state.isOpen}>
           <Menu>
-            <MenuItem>Home</MenuItem>
-            <MenuItem>Menu</MenuItem>
+            <MenuItem>
+              <StyledLink onClick={this.navigate} to="/">
+                Home
+              </StyledLink>
+            </MenuItem>
+            <MenuItem>
+              <StyledLink onClick={this.navigate} to="/menu">
+                Menu
+              </StyledLink>
+            </MenuItem>
             <MenuItem>Catering</MenuItem>
             <MenuItem>About</MenuItem>
             <MenuItem>Contact</MenuItem>
