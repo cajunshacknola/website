@@ -96,11 +96,12 @@ const Address = styled.div`
 `;
 
 const MenuContainer = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
-  width: 100%;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
   z-index: 1000;
   background-color: rgb(255, 255, 255);
   color: black;
