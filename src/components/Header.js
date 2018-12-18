@@ -146,7 +146,7 @@ export default class Header extends Component {
   render() {
     return (
       <Container istop={this.props.istop}>
-        <ScrollLock />
+        {this.state.isOpen && <ScrollLock />}
         <Title isTop={this.props.isTop}>
           <i className="fas fa-warehouse" />
         </Title>
