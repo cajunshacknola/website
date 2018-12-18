@@ -49,6 +49,7 @@ const ToggleContainer = styled.div`
   align-items: center;
   cursor: pointer;
   width: 35px;
+  z-index: 1001;
 `;
 
 const NavToggle = styled.div`
@@ -94,14 +95,68 @@ const Address = styled.div`
   transition: all 300ms ease-in-out;
 `;
 
+const MenuContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  transform: scale(${props => (props.isOpen ? 1 : 0)});
+  transition: transform 250ms ease-in-out;
+  transform-origin: top;
+`;
+
+const Menu = styled.ul`
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+`;
+
+const MenuItem = styled.li`
+  margin-top: 20px;
+  font-weight: 800;
+  font-size: 2em;
+  border-bottom: 3px solid black;
+`;
+
 export default class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false
+    };
+
+    this.toggle = this.toggle.bind(this);
+  }
+
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
+
   render() {
     return (
       <Container istop={this.props.istop}>
         <Title isTop={this.props.isTop}>
           <i className="fas fa-warehouse" />
         </Title>
-        <ToggleContainer>
+        <MenuContainer isOpen={this.state.isOpen}>
+          <Menu>
+            <MenuItem>Home</MenuItem>
+            <MenuItem>Menu</MenuItem>
+            <MenuItem>Catering</MenuItem>
+            <MenuItem>About</MenuItem>
+            <MenuItem>Contact</MenuItem>
+          </Menu>
+        </MenuContainer>
+        <ToggleContainer onClick={this.toggle}>
           <NavToggle />
         </ToggleContainer>
         <Address isTop={this.props.isTop}>{this.props.isTop ? "9036 Lake Forest New Orleans, LA 70127" : ""}</Address>
