@@ -114,7 +114,6 @@ const MenuContainer = styled.div`
   left: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
   z-index: 1000;
   background-color: rgb(255, 255, 255);
   color: black;
@@ -130,12 +129,14 @@ const Menu = styled.ul`
   justify-content: center;
   align-items: center;
   list-style: none;
+  text-transform: uppercase;
 `;
 
 const MenuItem = styled.li`
-  margin-top: 20px;
-  font-weight: 800;
-  font-size: 2em;
+  margin-top: 30px;
+  font-weight: 500;
+  font-size: 1.5em;
+  font-style: italic;
   border-bottom: 3px solid black;
 `;
 
@@ -179,17 +180,28 @@ export default class Header extends Component {
           <Menu>
             <MenuItem>
               <StyledLink onClick={this.navigate} to="/">
-                Home
+                <i class="fas fa-home" />
+                {"    "}Home
               </StyledLink>
             </MenuItem>
             <MenuItem>
               <StyledLink onClick={this.navigate} to="/menu">
-                Menu
+                <i class="fab fa-elementor" />
+                {"    "}Menu
               </StyledLink>
             </MenuItem>
-            <MenuItem>Catering</MenuItem>
-            <MenuItem>About</MenuItem>
-            <MenuItem>Contact</MenuItem>
+            <MenuItem>
+              <i class="fas fa-water" />
+              {"    "}Catering
+            </MenuItem>
+            <MenuItem>
+              <i class="fas fa-info-circle" />
+              {"    "}About
+            </MenuItem>
+            <MenuItem>
+              <i class="fas fa-file-contract" />
+              {"    "}Contact
+            </MenuItem>
           </Menu>
         </MenuContainer>
         <ToggleContainer onClick={this.toggle}>
