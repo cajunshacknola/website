@@ -60,7 +60,7 @@ const Price = styled.div`
   width: 20%;
   font-style: italic;
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   ::before {
     content: "$ ";
   }

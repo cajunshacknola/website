@@ -50,34 +50,45 @@ const ToggleContainer = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  width: 35px;
+  width: 30px;
   z-index: 1001;
 `;
 
 const NavToggle = styled.div`
   position: relative;
-  width: 35px;
-  height: 5px;
-  background-color: black;
-
+  margin: 0;
+  padding: 0;
+  width: 30px;
+  height: 4px;
+  background-color: ${props => (props.isOpen ? "white" : "black")};
   ::before {
     content: "";
     display: block;
+    margin: 0;
+    padding: 0;
     position: absolute;
     top: 10px;
-    width: 35px;
-    height: 5px;
+    width: 30px;
+    height: 4px;
     background-color: black;
+    transform: rotate(${props => (props.isOpen ? -41 : 0)}deg);
+    transform-origin: left;
+    transition: transform 250ms ease-in-out;
   }
 
   ::after {
     content: "";
     display: block;
     position: absolute;
+    margin: 0;
+    padding: 0;
     top: -10px;
-    width: 35px;
-    height: 5px;
+    width: 30px;
+    height: 4px;
     background-color: black;
+    transform: rotate(${props => (props.isOpen ? 41 : 0)}deg);
+    transform-origin: left;
+    transition: transform 250ms ease-in-out;
   }
 `;
 
@@ -108,7 +119,7 @@ const MenuContainer = styled.div`
   background-color: rgb(255, 255, 255);
   color: black;
   transform: scale(${props => (props.isOpen ? 1 : 0)});
-  transition: transform 250ms ease-in-out;
+  transition: transform ${props => (props.isOpen ? 250 : 0)}ms ease-in-out;
   transform-origin: top;
 `;
 
@@ -182,7 +193,7 @@ export default class Header extends Component {
           </Menu>
         </MenuContainer>
         <ToggleContainer onClick={this.toggle}>
-          <NavToggle />
+          <NavToggle isOpen={this.state.isOpen} />
         </ToggleContainer>
         <Address isTop={this.props.isTop}>{this.props.isTop ? "9036 Lake Forest New Orleans, LA 70127" : ""}</Address>
       </Container>
