@@ -114,6 +114,7 @@ const MenuContainer = styled.div`
   left: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
   z-index: 1000;
   background-color: rgb(255, 255, 255);
   color: black;
@@ -129,21 +130,18 @@ const Menu = styled.ul`
   justify-content: center;
   align-items: center;
   list-style: none;
-  text-transform: uppercase;
 `;
 
 const MenuItem = styled.li`
-  margin-top: 30px;
+  margin-top: 20px;
   font-weight: 500;
   font-size: 1.5em;
-  font-style: italic;
-  border-bottom: 3px solid black;
 `;
 
 const StyledLink = styled(Link)`
   text-decoration: none;
   background-color: white;
-  color: black;
+  color: #333;
 `;
 
 export default class Header extends Component {
@@ -180,27 +178,22 @@ export default class Header extends Component {
           <Menu>
             <MenuItem>
               <StyledLink onClick={this.navigate} to="/">
-                <i class="fas fa-home" />
-                {"    "}Home
+                Home
               </StyledLink>
             </MenuItem>
             <MenuItem>
               <StyledLink onClick={this.navigate} to="/menu">
-                <i class="fab fa-elementor" />
-                {"    "}Menu
+                Menu
               </StyledLink>
             </MenuItem>
             <MenuItem>
-              <i class="fas fa-water" />
-              {"    "}Catering
+              <StyledLink to="/catering">Catering</StyledLink>
             </MenuItem>
             <MenuItem>
-              <i class="fas fa-info-circle" />
-              {"    "}About
+              <StyledLink to="/about">About</StyledLink>
             </MenuItem>
             <MenuItem>
-              <i class="fas fa-file-contract" />
-              {"    "}Contact
+              <StyledLink to="/contact">Contact</StyledLink>
             </MenuItem>
           </Menu>
         </MenuContainer>
