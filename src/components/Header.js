@@ -11,7 +11,7 @@ const Container = styled.div`
   padding: ${props => (props.isTop ? 20 : 5)}px 0;
   display: grid;
   grid-template-columns: 1fr 15%;
-  grid-row-gap: 10px;
+  grid-row-gap: 5px;
   z-index: 999;
 `;
 
@@ -20,7 +20,7 @@ const Title = styled.div`
   letter-spacing: 0.1em;
   justify-content: flex-start;
   align-items: center;
-  font-size: 1.2em;
+  font-size: 1.7em;
   transform: scale(${props => (props.isTop ? 1 : 0.8)});
   transform-origin: left;
   transition: transform 300ms ease-in-out;
@@ -31,7 +31,7 @@ const Title = styled.div`
     margin: 0 10px;
     color: white;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    border-bottom: 5px solid black;
+    /* border-bottom: 5px solid black; */
   }
 
   ::after {
@@ -40,7 +40,7 @@ const Title = styled.div`
     margin: 0 10px;
     color: white;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    border-bottom: 5px solid black;
+    /* border-bottom: 5px solid black; */
   }
 `;
 
