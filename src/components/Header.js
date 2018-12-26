@@ -11,7 +11,7 @@ const Container = styled.div`
   padding: ${props => (props.isTop ? 20 : 5)}px 0;
   display: grid;
   grid-template-columns: 1fr 15%;
-  grid-row-gap: 10px;
+  grid-row-gap: 5px;
   z-index: 999;
 `;
 
@@ -20,7 +20,7 @@ const Title = styled.div`
   letter-spacing: 0.1em;
   justify-content: flex-start;
   align-items: center;
-  font-size: 1.2em;
+  font-size: 1.7em;
   transform: scale(${props => (props.isTop ? 1 : 0.8)});
   transform-origin: left;
   transition: transform 300ms ease-in-out;
@@ -31,7 +31,7 @@ const Title = styled.div`
     margin: 0 10px;
     color: white;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    border-bottom: 5px solid black;
+    /* border-bottom: 5px solid black; */
   }
 
   ::after {
@@ -40,7 +40,7 @@ const Title = styled.div`
     margin: 0 10px;
     color: white;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    border-bottom: 5px solid black;
+    /* border-bottom: 5px solid black; */
   }
 `;
 
@@ -114,6 +114,7 @@ const MenuContainer = styled.div`
   left: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
   z-index: 1000;
   background-color: rgb(255, 255, 255);
   color: black;
@@ -129,21 +130,18 @@ const Menu = styled.ul`
   justify-content: center;
   align-items: center;
   list-style: none;
-  text-transform: uppercase;
 `;
 
 const MenuItem = styled.li`
-  margin-top: 30px;
+  margin-top: 20px;
   font-weight: 500;
   font-size: 1.5em;
-  font-style: italic;
-  border-bottom: 3px solid black;
 `;
 
 const StyledLink = styled(Link)`
   text-decoration: none;
   background-color: white;
-  color: black;
+  color: #333;
 `;
 
 export default class Header extends Component {
@@ -180,27 +178,22 @@ export default class Header extends Component {
           <Menu>
             <MenuItem>
               <StyledLink onClick={this.navigate} to="/">
-                <i class="fas fa-home" />
-                {"    "}Home
+                Home
               </StyledLink>
             </MenuItem>
             <MenuItem>
               <StyledLink onClick={this.navigate} to="/menu">
-                <i class="fab fa-elementor" />
-                {"    "}Menu
+                Menu
               </StyledLink>
             </MenuItem>
             <MenuItem>
-              <i class="fas fa-water" />
-              {"    "}Catering
+              <StyledLink to="/catering">Catering</StyledLink>
             </MenuItem>
             <MenuItem>
-              <i class="fas fa-info-circle" />
-              {"    "}About
+              <StyledLink to="/about">About</StyledLink>
             </MenuItem>
             <MenuItem>
-              <i class="fas fa-file-contract" />
-              {"    "}Contact
+              <StyledLink to="/contact">Contact</StyledLink>
             </MenuItem>
           </Menu>
         </MenuContainer>
